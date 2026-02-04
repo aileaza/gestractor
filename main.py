@@ -222,6 +222,9 @@ class ZoomCropper:
         tk.Button(controls, text="<< Prev", command=self.prev_image).pack(side="left", padx=20)
         tk.Button(controls, text="Next >>", command=self.next_image).pack(side="left", padx=20)
 
+        self.root.bind("<Right>", lambda e: self.next_image())
+        self.root.bind("<Left>", lambda e: self.prev_image())
+        
         self.crop_counts = {}
 
     def load_folder(self):
